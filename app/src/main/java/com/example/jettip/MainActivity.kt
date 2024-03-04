@@ -160,6 +160,10 @@ fun BillForm(modifier: Modifier = Modifier,
                         onValchange(totalBillState.value.trim())
 
                         keyboardController?.hide()
+
+                        calculateTotalPerPerson(totalBill = totalBillState.value.toDouble(),
+                            splitBy = splitByState.value,
+                            tipPercentage = tipPercentage)
                     })
 
                 if (validState) {
